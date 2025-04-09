@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduVision | Plateforme E-Learning Premium</title>
+    <link rel="stylesheet" href="web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EduVision</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="courses.html">Cours</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Connexion</a>
+                <a href="signup.html" class="btn-signup">Inscription</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Apprenez. Progressez. Excellez.</h1>
+                <p>La plateforme d'apprentissage la plus avancée pour développer vos compétences.</p>
+                <a href="signup.html" class="cta-button">Commencer gratuitement</a>
+            </div>
+            <div class="hero-image">
+                <img src="imgs/etudiantenligne.jpeg" alt="Étudiant en ligne">
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="section-header">
+                <h2>Pourquoi choisir EduVision</h2>
+                <p>Notre plateforme révolutionne l'apprentissage en ligne</p>
+            </div>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Apprentissage interactif</h3>
+                    <p>Des cours interactifs conçus par des experts pour maximiser votre engagement et votre rétention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Certification reconnue</h3>
+                    <p>Obtenez des certifications reconnues par l'industrie pour valoriser votre parcours professionnel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>Communauté active</h3>
+                    <p>Rejoignez une communauté mondiale d'apprenants et collaborez sur des projets passionnants.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Accès mobile</h3>
+                    <p>Apprenez où que vous soyez grâce à notre application mobile optimisée pour tous les appareils.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="courses-preview">
+            <div class="section-header">
+                <h2>Nos cours populaires</h2>
+                <p>Découvrez nos formations les plus demandées</p>
+            </div>
+            <div class="course-cards">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/api/placeholder/400/250" alt="Développement Web">
+                        <div class="course-badge">Bestseller</div>
+                    </div>
+                    <div class="course-info">
+                        <h3>Développement Web Full Stack</h3>
+                        <div class="course-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8 (2345 avis)</span>
+                        </div>
+                        <p>Maîtrisez HTML, CSS, JavaScript, React et Node.js pour devenir développeur web complet.</p>
+                        <a href="courses/web-development.html" class="btn-course">Voir le cours</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/api/placeholder/400/250" alt="Intelligence Artificielle">
+                    </div>
+                    <div class="course-info">
+                        <h3>Intelligence Artificielle et Machine Learning</h3>
+                        <div class="course-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (1876 avis)</span>
+                        </div>
+                        <p>Apprenez les fondamentaux de l'IA et développez vos premiers modèles de machine learning.</p>
+                        <a href="courses/ai-ml.html" class="btn-course">Voir le cours</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="/api/placeholder/400/250" alt="Marketing Digital">
+                        <div class="course-badge">Nouveau</div>
+                    </div>
+                    <div class="course-info">
+                        <h3>Marketing Digital Avancé</h3>
+                        <div class="course-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4.0 (987 avis)</span>
+                        </div>
+                        <p>Stratégies de marketing digital pour accroître la visibilité de votre entreprise en ligne.</p>
+                        <a href="courses/digital-marketing.html" class="btn-course">Voir le cours</a>
+                    </div>
+                </div>
+            </div>
+            <div class="courses-cta">
+                <a href="courses.html" class="btn-view-all">Voir tous les cours <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <div class="section-header">
+                <h2>Ce que disent nos étudiants</h2>
+                <p>Découvrez l'impact d'EduVision sur leur carrière</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="quote">"EduVision a complètement transformé ma carrière. J'ai pu acquérir des compétences concrètes qui m'ont permis de décrocher mon emploi de rêve en tant que développeur frontend."</div>
+                    <div class="author">
+                        <img src="/api/placeholder/60/60" alt="Sophie Laurent">
+                        <div>
+                            <h4>Sophie Laurent</h4>
+                            <p>Développeuse Frontend, Paris</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"Les cours sont incroyablement bien structurés et les instructeurs sont de véritables experts dans leur domaine. La certification que j'ai obtenue est reconnue mondialement."</div>
+                    <div class="author">
+                        <img src="/api/placeholder/60/60" alt="Marc Dubois">
+                        <div>
+                            <h4>Marc Dubois</h4>
+                            <p>Data Scientist, Lyon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">"L'approche pratique d'EduVision m'a permis d'appliquer immédiatement ce que j'apprenais dans mon travail. Les projets réels ont fait toute la différence."</div>
+                    <div class="author">
+                        <img src="/api/placeholder/60/60" alt="Amina Benali">
+                        <div>
+                            <h4>Amina Benali</h4>
+                            <p>UX Designer, Bordeaux</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+        
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h2>Restez informé</h2>
+                <p>Inscrivez-vous à notre newsletter pour recevoir les dernières mises à jour sur nos cours et offres spéciales.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Votre adresse e-mail" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>EduVision</h3>
+                <p>La plateforme d'apprentissage en ligne qui transforme votre carrière et élargit vos horizons.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="courses.html">Cours</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="support.html">Support technique</a></li>
+                    <li><a href="privacy.html">Confidentialité</a></li>
+                    <li><a href="terms.html">Conditions d'utilisation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Avenue de l'Innovation, Paris</li>
+                    <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                    <li><i class="fas fa-envelope"></i> contact@eduvision.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EduVision. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

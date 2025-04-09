@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Cours | EduVision</title>
+    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.4/babel.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EduVision</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="courses.html" class="active">Cours</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Connexion</a>
+                <a href="signup.html" class="btn-signup">Inscription</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-nav">
+        <div class="close-menu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="courses.html">Cours</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="mobile-auth-buttons">
+            <a href="login.html" class="mobile-login">Connexion</a>
+            <a href="signup.html" class="mobile-signup">Inscription</a>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <section class="course-banner">
+        <div class="course-banner-content">
+            <h1>Explorez nos cours</h1>
+            <p>Découvrez notre catalogue complet de formations pour développer vos compétences et accélérer votre carrière.</p>
+        </div>
+    </section>
+
+    <section class="course-section">
+        <div class="container">
+            <div class="course-filters">
+                <div class="filter-group">
+                    <div class="filter-label">Catégories:</div>
+                    <div class="filter-options">
+                        <div class="filter-option active">Tous</div>
+                        <div class="filter-option">Développement Web</div>
+                        <div class="filter-option">Intelligence Artificielle</div>
+                        <div class="filter-option">Marketing Digital</div>
+                        <div class="filter-option">Design UX/UI</div>
+                        <div class="filter-option">Business</div>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-label">Niveau:</div>
+                    <div class="filter-options">
+                        <div class="filter-option active">Tous</div>
+                        <div class="filter-option">Débutant</div>
+                        <div class="filter-option">Intermédiaire</div>
+                        <div class="filter-option">Avancé</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="course-catalogue"></div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Restez informé</h2>
+            <p>Inscrivez-vous à notre newsletter pour recevoir les dernières mises à jour sur nos cours et offres spéciales.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Votre adresse e-mail" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>EduVision</h3>
+                <p>La plateforme d'apprentissage en ligne qui transforme votre carrière et élargit vos horizons.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Liens rapides</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="courses.html">Cours</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="support.html">Support technique</a></li>
+                    <li><a href="privacy.html">Confidentialité</a></li>
+                    <li><a href="terms.html">Conditions d'utilisation</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul class="contact-info">
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Avenue de l'Innovation, Paris</li>
+                    <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                    <li><i class="fas fa-envelope"></i> contact@eduvision.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EduVision. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script type="text/babel">
+        // Composant pour une carte de cours
+        const CourseCard = ({ course }) => {
+            const { title, image, category, level, instructor, rating, reviews, price, oldPrice, badge } = course;
+            
+            return (
+                <div className="course-card animate-on-scroll">
+                    <div className="course-image">
+                        <img src={image} alt={title} />
+                        {badge && <div className="course-badge">{badge}</div>}
+                    </div>
+                    <div className="course-info">
+                        <div className="course-category">
+                            <span>{category}</span>
+                            <span className="course-level">{level}</span>
+                        </div>
+                        <h3>{title}</h3>
+                        <div className="course-instructor">
+                            <img src="/api/placeholder/30/30" alt={instructor} />
+                            <span>{instructor}</span>
+                        </div>
+                        <div className="course-rating">
+                            {[...Array(5)].map((_, i) => (
+                                <i key={i} className={`fas fa-star ${i < Math.floor(rating) ? '' : 'far'}`}></i>
+                            ))}
+                            <span>{rating} ({reviews} avis)</span>
+                        </div>
+                        <div className="course-price">
+                            <span className="current-price">{price}€</span>
+                            {oldPrice && <span className="old-price">{oldPrice}€</span>}
+                        </div>
+                        <a href={`course-details.html?id=${course.id}`} className="btn-course">Voir le cours</a>
+                    </div>
+                </div>
+            );
+        };
+
+        // Composant pour le catalogue de cours
+        const CourseCatalogue = () => {
+            const [courses, setCourses] = React.useState([
+                {
+                    id: 1,
+                    title: "Développement Web Full Stack",
+                    image: "/api/placeholder/400/250",
+                    category: "Développement Web",
+                    level: "Intermédiaire",
+                    instructor: "Sophie Laurent",
+                    rating: 4.8,
+                    reviews: 2345,
+                    price: 49.99,
+                    oldPrice: 199.99,
+                    badge: "Bestseller"
+                },
+                {
+                    id: 2,
+                    title: "Intelligence Artificielle et Machine Learning",
+                    image: "/api/placeholder/400/250",
+                    category: "Intelligence Artificielle",
+                    level: "Avancé",
+                    instructor: "Marc Dubois",
+                    rating: 4.9,
+                    reviews: 1876,
+                    price: 69.99,
+                    oldPrice: 249.99
+                },
+                {
+                    id: 3,
+                    title: "Marketing Digital Avancé",
+                    image: "/api/placeholder/400/250",
+                    category: "Marketing Digital",
+                    level: "Intermédiaire",
+                    instructor: "Amina Benali",
+                    rating: 4.0,
+                    reviews: 987,
+                    price: 39.99,
+                    oldPrice: 169.99,
+                    badge: "Nouveau"
+                },
+                {
+                    id: 4,
+                    title: "Design UX/UI pour débutants",
+                    image: "/api/placeholder/400/250",
+                    category: "Design UX/UI",
+                    level: "Débutant",
+                    instructor: "Thomas Moreau",
+                    rating: 4.5,
+                    reviews: 756,
+                    price: 29.99,
+                    oldPrice: 149.99
+                },
+                {
+                    id: 5,
+                    title: "Python pour la Data Science",
+                    image: "/api/placeholder/400/250",
+                    category: "Intelligence Artificielle",
+                    level: "Intermédiaire",
+                    instructor: "Clara Fontaine",
+                    rating: 4.7,
+                    reviews: 1243,
+                    price: 59.99,
+                    oldPrice: 199.99
+                },
+                {
+                    id: 6,
+                    title: "Entrepreneuriat et Business Plan",
+                    image: "/api/placeholder/400/250",
+                    category: "Business",
+                    level: "Débutant",
+                    instructor: "Karim Benzema",
+                    rating: 4.2,
+                    reviews: 567,
+                    price: 34.99,
+                    oldPrice: 129.99
+                },
+                {
+                    id: 7,
+                    title: "Développement d'Applications React",
+                    image: "/api/placeholder/400/250",
+                    category: "Développement Web",
+                    level: "Avancé",
+                    instructor: "Julie Martin",
+                    rating: 4.6,
+                    reviews: 879,
+                    price: 54.99,
+                    oldPrice: 189.99,
+                    badge: "Populaire"
+                },
+                {
+                    id: 8,
+                    title: "Gestion de Projet Agile",
+                    image: "/api/placeholder/400/250",
+                    category: "Business",
+                    level: "Intermédiaire",
+                    instructor: "Pierre Dumont",
+                    rating: 4.3,
+                    reviews: 645,
+                    price: 44.99,
+                    oldPrice: 179.99
+                },
+                {
+                    id: 9,
+                    title: "SEO et Référencement Google",
+                    image: "/api/placeholder/400/250",
+                    category: "Marketing Digital",
+                    level: "Débutant",
+                    instructor: "Emma Leroy",
+                    rating: 4.4,
+                    reviews: 723,
+                    price: 39.99,
+                    oldPrice: 159.99
+                }
+            ]);
+            
+            const [filters, setFilters] = React.useState({
+                category: "Tous",
+                level: "Tous"
+            });
+
+            React.useEffect(() => {
+                // Activer les filtres
+                const filterOptions = document.querySelectorAll('.filter-option');
+                filterOptions.forEach(option => {
+                    option.addEventListener('click', function() {
+                        const filterGroup = this.parentElement;
+                        filterGroup.querySelectorAll('.filter-option').forEach(opt => {
+                            opt.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                        
+                        // Mettre à jour les filtres
+                        const filterType = filterGroup.previousElementSibling.textContent.trim().replace(':', '');
+                        const filterValue = this.textContent.trim();
+                        
+                        if (filterType === 'Catégories') {
+                            setFilters(prev => ({ ...prev, category: filterValue }));
+                        } else if (filterType === 'Niveau') {
+                            setFilters(prev => ({ ...prev, level: filterValue }));
+                        }
+                    });
+                });
+            }, []);
+            
+            // Filtrer les cours
+            const filteredCourses = courses.filter(course => {
+                const categoryMatch = filters.category === 'Tous' || course.category === filters.category;
+                const levelMatch = filters.level === 'Tous' || course.level === filters.level;
+                return categoryMatch && levelMatch;
+            });
+
+            return (
+                <div className="course-grid">
+                    {filteredCourses.map(course => (
+                        <CourseCard key={course.id} course={course} />
+                    ))}
+                </div>
+            );
+        };
+
+        // Monter le composant React
+        ReactDOM.render(<CourseCatalogue />, document.getElementById('course-catalogue'));
+    </script>
+</body>
+</html>

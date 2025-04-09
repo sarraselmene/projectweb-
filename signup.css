@@ -1,0 +1,331 @@
+/* styles.css */
+
+/* --- Variables couleurs --- */
+:root {
+    --primary: #1e3a8a; /* Bleu foncé */
+    --secondary: #3b82f6; /* Bleu vif */
+    --light: #e0f2fe; /* Bleu clair */
+    --background: #f8fafc; /* Fond doux */
+    --text-dark: #0f172a;
+    --text-light: #ffffff;
+    --gray: #64748b;
+}
+
+/* --- Reset & base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--background);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Header / Nav --- */
+header {
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--text-light);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links,
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a,
+.auth-buttons a {
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.auth-buttons .btn-login:hover,
+.nav-links a:hover {
+    background-color: var(--secondary);
+}
+
+.auth-buttons .btn-signup {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.auth-buttons .btn-signup.active {
+    background-color: white;
+    color: var(--primary);
+}
+
+/* --- Form Container --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 1rem;
+    background: var(--background);
+}
+
+.auth-form {
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    width: 100%;
+}
+
+.auth-form h2 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* --- Form Inputs --- */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* --- Button --- */
+.auth-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #2563eb;
+}
+
+/* --- Separator --- */
+.auth-separator {
+    text-align: center;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.auth-separator span {
+    background: white;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 2;
+    color: var(--gray);
+}
+
+.auth-separator::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #cbd5e1;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+}
+
+/* --- Social Auth --- */
+.social-auth {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.social-auth-btn {
+    flex: 1;
+    background-color: var(--light);
+    color: var(--text-dark);
+    border: 1px solid #cbd5e1;
+    padding: 0.7rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.social-auth-btn:hover {
+    background-color: #dbeafe;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--primary);
+    color: white;
+    padding: 3rem 2rem 1rem;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+}
+
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 1rem;
+}
+
+.footer-column p,
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: white;
+    font-size: 0.95rem;
+}
+
+.footer-column ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-links a {
+    margin-right: 0.5rem;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 2rem;
+}
+
+/* --- Responsive --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    width: 25px;
+}
+
+@media (max-width: 768px) {
+    .nav-links,
+    .auth-buttons {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 80%;
+        height: 100%;
+        background: var(--primary);
+        color: white;
+        transition: left 0.3s;
+        padding: 2rem;
+        z-index: 1000;
+    }
+
+    .mobile-nav.active {
+        left: 0;
+    }
+
+    .mobile-nav-links li {
+        margin: 1rem 0;
+    }
+
+    .mobile-auth-buttons a {
+        display: block;
+        margin-top: 1rem;
+        background: var(--secondary);
+        padding: 0.5rem;
+        border-radius: 6px;
+        text-align: center;
+    }
+
+    .overlay.active {
+        display: block;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 500;
+    }
+
+    .close-menu {
+        text-align: right;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}
