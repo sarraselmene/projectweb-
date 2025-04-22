@@ -28,19 +28,66 @@
             </div>
         </nav>
     </header>
-
     <main>
+        <style>
+            .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+            }
+        
+            .video-background iframe {
+            width: 100vw;
+            height: 100vh;
+            }
+        
+            .hero {
+            position: relative;
+            z-index: 1;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            }
+        
+            .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: blue;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            }
+        </style>
+
+    
+        <div class="video-background">
+            <iframe 
+              src="https://www.youtube.com/embed/e5Hc2B50Z7c?autoplay=1&mute=1&loop=1&playlist=e5Hc2B50Z7c&controls=0&modestbranding=1&rel=0&showinfo=0"
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen>
+            </iframe>
+          </div>
+          
         <section class="hero">
             <div class="hero-content">
-                <h1>Apprenez. Progressez. Excellez.</h1>
-                <p>La plateforme d'apprentissage la plus avancée pour développer vos compétences.</p>
-                <a href="signup.html" class="cta-button">Commencer gratuitement</a>
+              <h1>Apprenez. Progressez. Excellez.</h1>
+              <p>La plateforme d'apprentissage la plus avancée pour développer vos compétences.</p>
+              <a href="signup.html" class="cta-button">Commencer gratuitement</a>
             </div>
-            <div class="hero-image">
-                <img src="imgs/etudiantenligne.jpeg" alt="Étudiant en ligne">
-            </div>
-        </section>
-
+          </section>
+          
+  
         <section class="features">
             <div class="section-header">
                 <h2>Pourquoi choisir EduVision</h2>
@@ -78,7 +125,7 @@
             <div class="course-cards">
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="/api/placeholder/400/250" alt="Développement Web">
+                        <img src="imgs/dw.jpg" alt="Développement Web">
                         <div class="course-badge">Bestseller</div>
                     </div>
                     <div class="course-info">
@@ -97,7 +144,7 @@
                 </div>
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="/api/placeholder/400/250" alt="Intelligence Artificielle">
+                        <img src="imgs/ia.webp" alt="Intelligence Artificielle">
                     </div>
                     <div class="course-info">
                         <h3>Intelligence Artificielle et Machine Learning</h3>
@@ -115,7 +162,7 @@
                 </div>
                 <div class="course-card">
                     <div class="course-image">
-                        <img src="/api/placeholder/400/250" alt="Marketing Digital">
+                        <img src="imgs/marketingd.jpg" alt="Marketing Digital">
                         <div class="course-badge">Nouveau</div>
                     </div>
                     <div class="course-info">
@@ -149,28 +196,28 @@
                     <div class="author">
                         <img src="/api/placeholder/60/60" alt="Sophie Laurent">
                         <div>
-                            <h4>Sophie Laurent</h4>
-                            <p>Développeuse Frontend, Paris</p>
+                            <h4>Meriem Gharsallah</h4>
+                            <p>Développeuse Frontend, Tunisie</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="quote">"Les cours sont incroyablement bien structurés et les instructeurs sont de véritables experts dans leur domaine. La certification que j'ai obtenue est reconnue mondialement."</div>
                     <div class="author">
-                        <img src="/api/placeholder/60/60" alt="Marc Dubois">
+                        <img src="imgs/tarak.jpeg" alt="Marc Dubois">
                         <div>
-                            <h4>Marc Dubois</h4>
-                            <p>Data Scientist, Lyon</p>
+                            <h4>Tarak Dhieb </h4>
+                            <p>ingenieur en IA ,Fis </p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="quote">"L'approche pratique d'EduVision m'a permis d'appliquer immédiatement ce que j'apprenais dans mon travail. Les projets réels ont fait toute la différence."</div>
                     <div class="author">
-                        <img src="/api/placeholder/60/60" alt="Amina Benali">
+                        <img src="imgs/" alt="Amina Benali">
                         <div>
                             <h4>Amina Benali</h4>
-                            <p>UX Designer, Bordeaux</p>
+                            <p>UX Designer, Tunisie </p>
                         </div>
                     </div>
                 </div>
@@ -204,7 +251,7 @@
                 <h3>EduVision</h3>
                 <p>La plateforme d'apprentissage en ligne qui transforme votre carrière et élargit vos horizons.</p>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="sarra.selmene"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
@@ -232,9 +279,9 @@
             <div class="footer-column">
                 <h4>Contact</h4>
                 <ul class="contact-info">
-                    <li><i class="fas fa-map-marker-alt"></i> 123 Avenue de l'Innovation, Paris</li>
-                    <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
-                    <li><i class="fas fa-envelope"></i> contact@eduvision.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Avenue de l'Innovation, Bardo</li>
+                    <li><i class="fas fa-phone"></i> +216 96 128 680 </li>
+                    <li><i class="fas fa-envelope"></i> ssplatforme@eduvision.com</li>
                 </ul>
             </div>
         </div>

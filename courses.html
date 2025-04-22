@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Cours | EduVision</title>
-    <link rel="stylesheet" href="courses.css">
+    <link rel="stylesheet" href="couses2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.4/babel.min.js"></script>
 </head>
 <body>
     <header>
@@ -53,7 +50,7 @@
         <div class="course-banner-content">
             <h1>Explorez nos cours</h1>
             <p>Découvrez notre catalogue complet de formations pour développer vos compétences et accélérer votre carrière.</p>
-        </div>
+        </div> 
     </section>
 
     <section class="course-section">
@@ -62,26 +59,28 @@
                 <div class="filter-group">
                     <div class="filter-label">Catégories:</div>
                     <div class="filter-options">
-                        <div class="filter-option active">Tous</div>
-                        <div class="filter-option">Développement Web</div>
-                        <div class="filter-option">Intelligence Artificielle</div>
-                        <div class="filter-option">Marketing Digital</div>
-                        <div class="filter-option">Design UX/UI</div>
-                        <div class="filter-option">Business</div>
+                        <div class="filter-option active" data-category="Tous">Tous</div>
+                        <div class="filter-option" data-category="Développement Web">Développement Web</div>
+                        <div class="filter-option" data-category="Intelligence Artificielle">Intelligence Artificielle</div>
+                        <div class="filter-option" data-category="Marketing Digital">Marketing Digital</div>
+                        <div class="filter-option" data-category="Design UX/UI">Design UX/UI</div>
+                        <div class="filter-option" data-category="Business">Business</div>
                     </div>
                 </div>
                 <div class="filter-group">
                     <div class="filter-label">Niveau:</div>
                     <div class="filter-options">
-                        <div class="filter-option active">Tous</div>
-                        <div class="filter-option">Débutant</div>
-                        <div class="filter-option">Intermédiaire</div>
-                        <div class="filter-option">Avancé</div>
+                        <div class="filter-option active" data-level="Tous">Tous</div>
+                        <div class="filter-option" data-level="Débutant">Débutant</div>
+                        <div class="filter-option" data-level="Intermédiaire">Intermédiaire</div>
+                        <div class="filter-option" data-level="Avancé">Avancé</div>
                     </div>
                 </div>
             </div>
 
-            <div id="course-catalogue"></div>
+            <div id="course-catalogue" class="course-grid">
+                <!-- Les cours seront générés dynamiquement par JavaScript -->
+            </div>
         </div>
     </section>
 
@@ -141,207 +140,256 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script type="text/babel">
-        // Composant pour une carte de cours
-        const CourseCard = ({ course }) => {
-            const { title, image, category, level, instructor, rating, reviews, price, oldPrice, badge } = course;
-            
-            return (
-                <div className="course-card animate-on-scroll">
-                    <div className="course-image">
-                        <img src={image} alt={title} />
-                        {badge && <div className="course-badge">{badge}</div>}
-                    </div>
-                    <div className="course-info">
-                        <div className="course-category">
-                            <span>{category}</span>
-                            <span className="course-level">{level}</span>
-                        </div>
-                        <h3>{title}</h3>
-                        <div className="course-instructor">
-                            <img src="/api/placeholder/30/30" alt={instructor} />
-                            <span>{instructor}</span>
-                        </div>
-                        <div className="course-rating">
-                            {[...Array(5)].map((_, i) => (
-                                <i key={i} className={`fas fa-star ${i < Math.floor(rating) ? '' : 'far'}`}></i>
-                            ))}
-                            <span>{rating} ({reviews} avis)</span>
-                        </div>
-                        <div className="course-price">
-                            <span className="current-price">{price}€</span>
-                            {oldPrice && <span className="old-price">{oldPrice}€</span>}
-                        </div>
-                        <a href={`course-details.html?id=${course.id}`} className="btn-course">Voir le cours</a>
-                    </div>
-                </div>
-            );
+    <script>
+        // Données des cours
+        const coursesData = [
+            {
+                id: 1,
+                title: "Développement Web Full Stack",
+                image: "imgs/dw.jpg",
+                category: "Développement Web",
+                level: "Intermédiaire",
+                instructor: "Sophie Laurent",
+                rating: 4.8,
+                reviews: 2345,
+                price: 49.99,
+                oldPrice: 199.99,
+                badge: "Bestseller"
+            },
+            {
+                id: 2,
+                title: "Intelligence Artificielle et Machine Learning",
+                image: "imgs/ia.webp",
+                category: "Intelligence Artificielle",
+                level: "Avancé",
+                instructor: "Marc Dubois",
+                rating: 4.9,
+                reviews: 1876,
+                price: 69.99,
+                oldPrice: 249.99
+            },
+            {
+                id: 3,
+                title: "Marketing Digital Avancé",
+                image: "imgs/marketingd.jpg",
+                category: "Marketing Digital",
+                level: "Intermédiaire",
+                instructor: "Amina Benali",
+                rating: 4.0,
+                reviews: 987,
+                price: 39.99,
+                oldPrice: 169.99,
+                badge: "Nouveau"
+            },
+            {
+                id: 4,
+                title: "Design UX/UI pour débutants",
+                image: "imgs/ui.png",
+                category: "Design UX/UI",
+                level: "Débutant",
+                instructor: "Thomas Moreau",
+                rating: 4.5,
+                reviews: 756,
+                price: 29.99,
+                oldPrice: 149.99
+            },
+            {
+                id: 5,
+                title: "Python pour la Data Science",
+                image: "imgs/pydata.jpg",
+                category: "Intelligence Artificielle",
+                level: "Intermédiaire",
+                instructor: "Clara Fontaine",
+                rating: 4.7,
+                reviews: 1243,
+                price: 59.99,
+                oldPrice: 199.99
+            },
+            {
+                id: 6,
+                title: "Entrepreneuriat et Business Plan",
+                image: "imgs/bp.jpg",
+                category: "Business",
+                level: "Débutant",
+                instructor: "Karim Benzema",
+                rating: 4.2,
+                reviews: 567,
+                price: 34.99,
+                oldPrice: 129.99
+            },
+            {
+                id: 7,
+                title: "Développement d'Applications React",
+                image: "imgs/react.jpeg",
+                category: "Développement Web",
+                level: "Avancé",
+                instructor: "Julie Martin",
+                rating: 4.6,
+                reviews: 879,
+                price: 54.99,
+                oldPrice: 189.99,
+                badge: "Populaire"
+            },
+            {
+                id: 8,
+                title: "Gestion de Projet Agile",
+                image: "imgs/agile.webp",
+                category: "Business",
+                level: "Intermédiaire",
+                instructor: "Pierre Dumont",
+                rating: 4.3,
+                reviews: 645,
+                price: 44.99,
+                oldPrice: 179.99
+            },
+            {
+                id: 9,
+                title: "SEO et Référencement Google",
+                image: "imgs/seo.webp",
+                category: "Marketing Digital",
+                level: "Débutant",
+                instructor: "Emma Leroy",
+                rating: 4.4,
+                reviews: 723,
+                price: 39.99,
+                oldPrice: 159.99
+            }
+        ];
+
+
+        let activeFilters = {
+            category: "Tous",
+            level: "Tous"
         };
 
-        // Composant pour le catalogue de cours
-        const CourseCatalogue = () => {
-            const [courses, setCourses] = React.useState([
-                {
-                    id: 1,
-                    title: "Développement Web Full Stack",
-                    image: "/api/placeholder/400/250",
-                    category: "Développement Web",
-                    level: "Intermédiaire",
-                    instructor: "Sophie Laurent",
-                    rating: 4.8,
-                    reviews: 2345,
-                    price: 49.99,
-                    oldPrice: 199.99,
-                    badge: "Bestseller"
-                },
-                {
-                    id: 2,
-                    title: "Intelligence Artificielle et Machine Learning",
-                    image: "/api/placeholder/400/250",
-                    category: "Intelligence Artificielle",
-                    level: "Avancé",
-                    instructor: "Marc Dubois",
-                    rating: 4.9,
-                    reviews: 1876,
-                    price: 69.99,
-                    oldPrice: 249.99
-                },
-                {
-                    id: 3,
-                    title: "Marketing Digital Avancé",
-                    image: "/api/placeholder/400/250",
-                    category: "Marketing Digital",
-                    level: "Intermédiaire",
-                    instructor: "Amina Benali",
-                    rating: 4.0,
-                    reviews: 987,
-                    price: 39.99,
-                    oldPrice: 169.99,
-                    badge: "Nouveau"
-                },
-                {
-                    id: 4,
-                    title: "Design UX/UI pour débutants",
-                    image: "/api/placeholder/400/250",
-                    category: "Design UX/UI",
-                    level: "Débutant",
-                    instructor: "Thomas Moreau",
-                    rating: 4.5,
-                    reviews: 756,
-                    price: 29.99,
-                    oldPrice: 149.99
-                },
-                {
-                    id: 5,
-                    title: "Python pour la Data Science",
-                    image: "/api/placeholder/400/250",
-                    category: "Intelligence Artificielle",
-                    level: "Intermédiaire",
-                    instructor: "Clara Fontaine",
-                    rating: 4.7,
-                    reviews: 1243,
-                    price: 59.99,
-                    oldPrice: 199.99
-                },
-                {
-                    id: 6,
-                    title: "Entrepreneuriat et Business Plan",
-                    image: "/api/placeholder/400/250",
-                    category: "Business",
-                    level: "Débutant",
-                    instructor: "Karim Benzema",
-                    rating: 4.2,
-                    reviews: 567,
-                    price: 34.99,
-                    oldPrice: 129.99
-                },
-                {
-                    id: 7,
-                    title: "Développement d'Applications React",
-                    image: "/api/placeholder/400/250",
-                    category: "Développement Web",
-                    level: "Avancé",
-                    instructor: "Julie Martin",
-                    rating: 4.6,
-                    reviews: 879,
-                    price: 54.99,
-                    oldPrice: 189.99,
-                    badge: "Populaire"
-                },
-                {
-                    id: 8,
-                    title: "Gestion de Projet Agile",
-                    image: "/api/placeholder/400/250",
-                    category: "Business",
-                    level: "Intermédiaire",
-                    instructor: "Pierre Dumont",
-                    rating: 4.3,
-                    reviews: 645,
-                    price: 44.99,
-                    oldPrice: 179.99
-                },
-                {
-                    id: 9,
-                    title: "SEO et Référencement Google",
-                    image: "/api/placeholder/400/250",
-                    category: "Marketing Digital",
-                    level: "Débutant",
-                    instructor: "Emma Leroy",
-                    rating: 4.4,
-                    reviews: 723,
-                    price: 39.99,
-                    oldPrice: 159.99
-                }
-            ]);
-            
-            const [filters, setFilters] = React.useState({
-                category: "Tous",
-                level: "Tous"
-            });
+        function createRatingStars(rating) {
+            let starsHTML = '';
+            for (let i = 1; i <= 5; i++) {
+                starsHTML += i <= Math.floor(rating)
+                    ? '<i class="fas fa-star"></i>'
+                    : '<i class="far fa-star"></i>';
+            }
+            return starsHTML;
+        }
 
-            React.useEffect(() => {
-                // Activer les filtres
-                const filterOptions = document.querySelectorAll('.filter-option');
-                filterOptions.forEach(option => {
-                    option.addEventListener('click', function() {
-                        const filterGroup = this.parentElement;
-                        filterGroup.querySelectorAll('.filter-option').forEach(opt => {
-                            opt.classList.remove('active');
-                        });
-                        this.classList.add('active');
-                        
-                        // Mettre à jour les filtres
-                        const filterType = filterGroup.previousElementSibling.textContent.trim().replace(':', '');
-                        const filterValue = this.textContent.trim();
-                        
-                        if (filterType === 'Catégories') {
-                            setFilters(prev => ({ ...prev, category: filterValue }));
-                        } else if (filterType === 'Niveau') {
-                            setFilters(prev => ({ ...prev, level: filterValue }));
-                        }
-                    });
-                });
-            }, []);
-            
-            // Filtrer les cours
-            const filteredCourses = courses.filter(course => {
-                const categoryMatch = filters.category === 'Tous' || course.category === filters.category;
-                const levelMatch = filters.level === 'Tous' || course.level === filters.level;
+        // 🔍 IntersectionObserver pour animation au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        function createCourseCard(course) {
+
+            const { id, title, image, category, level, instructor, rating, reviews, price, oldPrice, badge } = course;
+
+            const cardElement = document.createElement('div');
+            cardElement.className = 'course-card animate-on-scroll';
+
+            let badgeHTML = badge ? `<div class="course-badge">${badge}</div>` : '';
+            let oldPriceHTML = oldPrice ? `<span class="old-price">${oldPrice}€</span>` : '';
+
+            cardElement.innerHTML = `
+                <div class="course-image">
+                    <img src="${image}" alt="${title}" />
+                    ${badgeHTML}
+                </div>
+                <div class="course-info">
+                    <div class="course-category">
+                        <span>${category}</span>
+                        <span class="course-level">${level}</span>
+                    </div>
+                    <h3>${title}</h3>
+                    <div class="course-instructor">
+                        <img src="/api/placeholder/30/30" alt="${instructor}" />
+                        <span>${instructor}</span>
+                    </div>
+                    <div class="course-rating">
+                        ${createRatingStars(rating)}
+                        <span>${rating} (${reviews} avis)</span>
+                    </div>
+                    <div class="course-price">
+                        <span class="current-price">${price}€</span>
+                        ${oldPriceHTML}
+                    </div>
+                    <a href="course-details.html?id=${id}" class="btn-course">Voir le cours</a>
+                </div>
+            `;
+
+            // 👇 Observer la carte pour l'animation au scroll
+            observer.observe(cardElement);
+
+            return cardElement;
+        }
+
+        function renderFilteredCourses() {
+            const courseCatalogue = document.getElementById('course-catalogue');
+            courseCatalogue.innerHTML = '';
+
+            const filteredCourses = coursesData.filter(course => {
+                const categoryMatch = activeFilters.category === 'Tous' || course.category === activeFilters.category;
+                const levelMatch = activeFilters.level === 'Tous' || course.level === activeFilters.level;
                 return categoryMatch && levelMatch;
             });
 
-            return (
-                <div className="course-grid">
-                    {filteredCourses.map(course => (
-                        <CourseCard key={course.id} course={course} />
-                    ))}
-                </div>
-            );
-        };
+            filteredCourses.forEach(course => {
+                courseCatalogue.appendChild(createCourseCard(course));
+            });
+        }
 
-        // Monter le composant React
-        ReactDOM.render(<CourseCatalogue />, document.getElementById('course-catalogue'));
+        function initializeFilters() {
+            const filterOptions = document.querySelectorAll('.filter-option');
+
+            filterOptions.forEach(option => {
+                option.addEventListener('click', function () {
+                    const filterGroup = this.parentElement;
+                    filterGroup.querySelectorAll('.filter-option').forEach(opt => {
+                        opt.classList.remove('active');
+                    });
+
+                    this.classList.add('active');
+
+                    if (this.hasAttribute('data-category')) {
+                        activeFilters.category = this.getAttribute('data-category');
+                    } else if (this.hasAttribute('data-level')) {
+                        activeFilters.level = this.getAttribute('data-level');
+                    }
+
+                    renderFilteredCourses();
+                });
+            });
+        }
+
+        function initializePage() {
+            initializeFilters();
+            renderFilteredCourses();
+
+            document.querySelector('.hamburger').addEventListener('click', function () {
+                document.querySelector('.mobile-nav').classList.add('active');
+                document.querySelector('.overlay').classList.add('active');
+            });
+
+            document.querySelector('.close-menu').addEventListener('click', function () {
+                document.querySelector('.mobile-nav').classList.remove('active');
+                document.querySelector('.overlay').classList.remove('active');
+            });
+
+            document.querySelector('.overlay').addEventListener('click', function () {
+                document.querySelector('.mobile-nav').classList.remove('active');
+                this.classList.remove('active');
+            });
+
+            document.getElementById('newsletter-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Merci pour votre inscription à notre newsletter!');
+                this.reset();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initializePage);
     </script>
-</body>
-</html>

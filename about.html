@@ -95,10 +95,14 @@
         }
 
         .team-member img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;        /* 🔥 Empêche l’image d’être déformée */
+            border-radius: 50%;       /* Rond */
             margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .team-member h3 {
@@ -156,7 +160,7 @@
 
     <section class="team-section">
         <div class="team-member">
-            <img src="https://via.placeholder.com/100" alt="Membre 1">
+            <img src="imgs/maphoto.jpg" alt="Membre 1">
             <h3>Sarah Selmene </h3>
             <p>Fondateur et CEO</p>
         </div>
